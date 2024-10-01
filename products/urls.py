@@ -12,3 +12,5 @@ urlpatterns = [
     path('docs/', include_docs_urls(title='API DJANGO CRUD')),
 ]
 # Compare this snippet from products/views.py:
+# from django.shortcuts import render
+# from rest_framework import viewsets
