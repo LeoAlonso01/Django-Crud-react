@@ -26,7 +26,9 @@ class Clientes(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=10)
     rfc = models.CharField(max_length=13)
+    image = models.ImageField(upload_to='clientes/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
         return self.name
@@ -45,26 +47,17 @@ class Providers(models.Model):
 
 class Sales(models.Model):
     id_sale = models.AutoField(primary_key=True)
+    total = models.DecimalField(max_digits=10, decimal_places=2, default =0.00)
     id_client = models.ForeignKey(Clientes, on_delete=models.CASCADE)
-    id_product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    id_provider = models.ForeignKey(Providers, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
-    date = models.DateField()
+    id_product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
+    id_provider = models.ForeignKey(Providers, on_delete=models.CASCADE, null=True)
+    quantity = models.IntegerField( default=0)
+    date = models.DateField( auto_now_add=True, null=True)
     total = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Venta de {self.quantity} de {self.id_product} a {self.id_client}"
-    
-    def save(self, *args, **kwargs):
-        self.total = self.quantity * self.id_product.price
-        self.id_product.stock -= self.quantity
-        super(Sales, self).save(*args, **kwargs)
-        if self.id_product.stock < 0:
-            raise ValueError('No hay suficiente stock')
-        self.id_product.save()
-        super(Sales, self).save(*args, **kwargs)
-        
+        return f"Venta {self.id} - Total: {self.total}"
     
 class Roles(models.Model):
     id_role = models.AutoField(primary_key=True)
@@ -93,4 +86,24 @@ class productsProviders(models.Model):
     def __str__(self):
         return self.id_product
     
+class salesCart(models.Model):
+    id_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    id_client = models.OneToOneField(Clientes, on_delete=models.CASCADE, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Carrito de {self.cliente} con {self.quantity} de {self.id_product.name}"
+
+class cartItem(models.Model):
+    id_cartItem = models.AutoField(primary_key=True)
+    id_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    sales = models.ForeignKey(Sales, on_delete=models.CASCADE, related_name='items', null=True)
+    quantity = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Item de {self.quantity} de {self.id_product.name} en venta {self.sales.id}"
+
+
 

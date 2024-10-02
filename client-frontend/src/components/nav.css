@@ -1,0 +1,214 @@
+/* Nav.css */
+
+nav {
+    background-color: #2c3e50; /* Color de fondo */
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+ul {
+    list-style: none; /* Eliminar el estilo de lista por defecto */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margin */
+    display: flex; /* Usar flexbox para disposición horizontal */
+    justify-content: space-around; /* Espaciado igual entre elementos */
+}
+
+li {
+    position: relative; /* Para el efecto hover */
+}
+
+a {
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    color: #ecf0f1; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno de los enlaces */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+a:hover {
+    background-color: #34495e; /* Color de fondo al pasar el ratón */
+    color: #ffffff; /* Cambiar el color del texto al pasar el ratón */
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff; /* Fondo blanco para contraste */
+    border: 1px solid #007BFF; /* Borde azul */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 8px; /* Espaciado interno reducido */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    margin: 5px; /* Espacio alrededor de la tarjeta */
+    max-width: 120px; /* Ancho máximo de la tarjeta más pequeño */
+}
+
+.profile-image {
+    border-radius: 50%; /* Imagen redonda */
+    width: 40px; /* Ancho reducido */
+    height: 40px; /* Alto reducido */
+    margin-bottom: 4px; /* Espacio debajo de la imagen */
+}
+
+h2 {
+    font-size: 14px; /* Tamaño del nombre más pequeño */
+    color: #007BFF; /* Color azul para el nombre */
+    margin: 0; /* Sin margen */
+}
+
+p {
+    font-size: 10px; /* Tamaño del email más pequeño */
+    color: #333; /* Color gris oscuro para el email */
+    margin: 0; /* Sin margen */
+}
+
+.container {
+    padding: 20px; /* Espaciado alrededor del contenedor */
+}
+
+.btn {
+    padding: 10px 15px; /* Espaciado interno para el botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.add-btn {
+    background-color: #28a745; /* Color verde */
+}
+
+.add-btn:hover {
+    background-color: #218838; /* Color verde más oscuro al pasar el ratón */
+}
+
+/* Estilos generales para el formulario */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para los labels */
+  form label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+  }
+  
+  /* Estilo para los inputs y select */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form input[type="password"]:focus,
+  form select:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  /* Estilo para el botón */
+  form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilo para los checkboxes */
+  form input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Estilo para mensajes de error o advertencia */
+  form .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    form {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    form button[type="submit"] {
+      font-size: 14px;
+    }
+  }
+
+  .btn-login {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white;              /* Color del texto */
+    border: none;              /* Sin borde */
+    padding: 15px 20px;        /* Espaciado interno */
+    text-align: center;        /* Centrar texto */
+    text-decoration: none;     /* Sin subrayado */
+    display: inline-block;     /* Hacerlo un bloque en línea */
+    font-size: 16px;           /* Tamaño de fuente */
+    margin: 4px 2px;          /* Espaciado exterior */
+    cursor: pointer;           /* Cambia el cursor al pasar */
+    border-radius: 8px;       /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s, transform 0.3s; /* Transición */
+}
+
+/* Efecto al pasar el mouse */
+.btn-login:hover {
+    background-color: #45a049; /* Color de fondo al pasar */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Efecto al hacer clic */
+.btn-login:active {
+    transform: translateY(1px); /* Baja el botón al hacer clic */
+}
+
+  
+
+
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column; /* Cambiar a disposición vertical en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    a {
+        padding: 15px; /* Aumentar el espaciado interno en pantallas pequeñas */
+        width: 100%; /* Hacer que los enlaces ocupen el ancho completo */
+        text-align: center; /* Centrar el texto */
+    }
+}

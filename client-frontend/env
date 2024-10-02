@@ -1,0 +1,3 @@
+API_URL = 'http://localhost:8000/products/api/v1/products/'
+VITE_APP_DOMAIN="dev-85kjznb2qyq6rnuv.us.auth0.com"
+VITE_APP_CLIENT_ID="byEkx5Y5l4U7MC8w8cI2R0umcDHnc8ME"

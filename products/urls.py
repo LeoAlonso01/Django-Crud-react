@@ -6,6 +6,11 @@ from products import views
 # api router
 router = routers.DefaultRouter()
 router.register(r'products', views.ProductView, 'products')
+router.register(r'sales', views.SalesView, 'sales')
+router.register(r'clientes', views.ClientesView, 'clientes')
+router.register(r'salescart', views.salesCartView, 'salescart')
+router.register(r'users', views.UsersView, 'users')
+
 
 urlpatterns = [
     path('api/v1/',  include(router.urls)),
